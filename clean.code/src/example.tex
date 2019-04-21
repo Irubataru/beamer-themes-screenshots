@@ -1,0 +1,106 @@
+\documentclass[14pt,dvipsnames,usenames]{beamer}
+\usepackage{listings}
+\usetheme{cleancode}
+
+\title[Small Title]{Talk Title}
+\subtitle{Talk Subtitle}
+\author{First Name.Last Name}
+\date{01.01.2019}
+
+\lstset{%
+  language=C++,
+  basicstyle=\scriptsize\ttfamily, 
+  keywordstyle=\color{OliveGreen},
+  identifierstyle=\color{RoyalBlue}, 
+  commentstyle=\color{Brown},  
+  morekeywords={shared_ptr,make_shared}
+}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \maketitle
+\end{frame}
+
+\begin{frame}{The Frame Title}
+
+  \begin{enumerate}
+    \item First item
+    \item Second item
+    \item ...
+  \end{enumerate}
+
+  \vfill
+
+  \begin{itemize}
+    \item A point
+    \item Another point
+    \item ...
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Frame Title}
+  \framesubtitle{The Frame Subtitle}
+
+  \begin{block}{}
+    A block without a title
+  \end{block}
+
+  \begin{block}{Block Title}
+    A block with a title
+  \end{block}
+  
+  \begin{alertblock}{}
+    An alertblock without a title
+  \end{alertblock}
+
+  \begin{alertblock}{Alertblock Title}
+    An alertblock with a title
+  \end{alertblock}
+
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{The Frame Title}
+  \framesubtitle{The Frame Subtitle}
+
+  \begin{exampleblock}{}
+    An exampleblock without a title
+  \end{exampleblock}
+
+  \begin{exampleblock}{exampleblock title}
+    A block with a title
+  \end{exampleblock}
+
+  \begin{exampleblock}{exampleblock with code}
+    \begin{lstlisting}
+    void ProcessObject(std::shared_ptr<MyClass> obj, 
+                       int process_id);
+
+    ProcessObject(std::make_shared<MyClass>(), 
+                  GetProcessID());
+    \end{lstlisting}
+  \end{exampleblock}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Frame Title}
+  \framesubtitle{The Frame Subtitle}
+
+  \begin{quoteblock}{quoteblock title}[Author of quote [ref]]
+    \begin{quote}\footnotesize
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget erat
+      lorem. Maecenas laoreet elementum sapien ut mattis. Suspendisse potenti. Ut
+      dapibus diam eget velit tempor dignissim. Morbi id mollis ex. Nulla
+      vestibulum facilisis sagittis. Ut et velit non nisi fermentum pellentesque a
+      vel lectus. Etiam sit amet eros tortor. Donec ullamcorper justo eu ipsum
+      ullamcorper, vel tempor nisl scelerisque.
+    \end{quote}
+  \end{quoteblock}
+
+\end{frame}
+
+\end{document}

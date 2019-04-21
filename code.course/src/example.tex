@@ -1,0 +1,97 @@
+\documentclass[14pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[quiet]{mathspec}
+
+\setmainfont[
+ItalicFont={Yanone Kaffeesatz Light},
+Scale=1.3,
+LetterSpace=2.0
+]{Yanone Kaffeesatz Bold}
+
+\setmonofont{Fira Code}
+
+\usetheme{CodeCourse}
+
+\usefonttheme{serif}
+
+\title[Small Title]{Talk Title}
+\subtitle{Talk Subtitle}
+\author{First Name.Last Name}
+\date{01.01.2019}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \maketitle
+\end{frame}
+
+\section{Section Frame}
+\frame{\sectionpage}
+
+\begin{frame}{The Frame Title}
+
+  \begin{enumerate}
+    \item First item
+    \item Second item
+    \item ...
+  \end{enumerate}
+
+  \vfill
+
+  \begin{itemize}
+    \item A point
+    \item Another point
+    \item ...
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Frame Title}
+  \framesubtitle{The Frame Subtitle}
+
+  \begin{block}{}
+    A block without a title
+  \end{block}
+
+  \vfill
+
+  \begin{block}{Block Title}
+    A block with a title
+  \end{block}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Frame Title}
+  \framesubtitle{The Frame Subtitle}
+  
+  \begin{alertblock}{}
+    An alertblock without a title
+  \end{alertblock}
+
+  \vfill
+
+  \begin{alertblock}{Alertblock Title}
+    An alertblock with a title
+  \end{alertblock}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Frame Title}
+  \framesubtitle{The Frame Subtitle}
+
+  \begin{exampleblock}{}
+    An exampleblock without a title
+  \end{exampleblock}
+
+  \vfill
+
+  \begin{exampleblock}{Exampleblock Title}
+    An exampleblock with a title
+  \end{exampleblock}
+
+\end{frame}
+
+\end{document}
