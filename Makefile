@@ -11,7 +11,7 @@ PDFTEX   := xelatex
 # ------------------------------------------------------------------------------
 # {{{
 
-themes    := corporate clean.code light.round light.square code.course
+themes    := corporate clean.code light.theme code.course
 tex_files := $(patsubst %, %/src/example.tex, $(themes))
 pdf_files := $(tex_files:%.tex=%.pdf)
 png_files := $(patsubst %, %/screenshot-1.png, $(themes))
@@ -22,14 +22,37 @@ png_files := $(patsubst %, %/screenshot-1.png, $(themes))
 # ------------------------------------------------------------------------------
 # {{{
 
-.PHONY: all clean
+.PHONY: all
+all: $(png_files)
 
- all: $(png_files)
+.PHONY: clean
+clean: \
+	clean-corporate \
+  clean-clean.code \
+  clean-light.theme \
+  clean-code.course
 
-clean:
-	@rm -vrf $(patsubst %, %/src/build, $(themes))
-	@rm -vf $(pdf_files)
-	@rm -vf $(patsubst %, %/*.png, $(themes))
+.PHONY: clean-corporate
+clean-corporate:
+	$(call clean-folder, corporate)
+
+.PHONY: clean-clean.code
+clean-clean.code:
+	$(call clean-folder, clean.code)
+
+.PHONY: clean-light.theme
+clean-light.theme:
+	$(call clean-folder, light.theme)
+
+.PHONY: clean-code.course
+clean-code.course:
+	$(call clean-folder, code.course)
+
+define clean-folder
+	@rm -vrf $1/src/build
+	@rm -vf $1/src/example.pdf
+	@rm -vf $1/*.png
+endef
 
 # }}
 #
